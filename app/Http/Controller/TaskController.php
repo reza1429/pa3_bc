@@ -75,7 +75,7 @@ class TaskController extends Controller {
 
 
 	// TODO: deleteTask()
-	// URl: http://localhost:8001/task/delete_task/{_id}
+	// URl: http://localhost:8001/task/delete_task/{id}
 	public function deleteTask($id)
 	{
 		$existTask = $this->taskService->getById($id);
@@ -121,6 +121,7 @@ class TaskController extends Controller {
 	}
 
 	// TODO: unassignTask()
+	// URl: http://localhost:8001/unassign_task/{taskId}
 	public function unassignTask($taskId)
 	{
 		$existTask = $this->taskService->getById($taskId);

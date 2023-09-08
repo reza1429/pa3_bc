@@ -55,6 +55,9 @@ class TaskRepository
 		return $id;
 	}
 
+	/**
+	 * Untuk menghapus task
+	 */
 	public function destroy(array $taskId)
 	{
 		$id = $this->tasks->deleteQuery($taskId);
