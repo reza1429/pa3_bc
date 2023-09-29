@@ -2,7 +2,7 @@
 
 namespace App\Http\Controller;
 
-use App\ContohBootcamp\Services\TaskService;
+use App\ServiceRepositoryPattern\Services\TaskService;
 use App\Helpers\MongoModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
