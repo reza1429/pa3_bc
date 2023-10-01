@@ -24,6 +24,10 @@ Route::prefix('task')->group(function() {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
     Route::group(['middleware' => 'auth:guardian'], function () {
+        Route::post('/logout', [AuthController::class, 'logout']);
+        Route::get('/data', [AuthController::class, 'data']);
+        Route::post('/refresh', [AuthController::class, 'refresh']);
+
         Route::get('/show_tasks', [TaskController::class, 'showTasks']);
         Route::post('/create_task', [TaskController::class, 'createTask']);
         Route::put('/update_task', [TaskController::class, 'updateTask']);

@@ -43,7 +43,7 @@ class TaskController extends Controller {
 		$task = $this->taskService->getById($id);
 
 		return response()->json([
-			"message" => "subtask added successfully",
+			"message" => "task added successfully",
 			"data" => $task
 		],200);
 	}
@@ -68,7 +68,7 @@ class TaskController extends Controller {
 		// $task = $this->taskService->getById($taskId);
 
 		return response()->json([
-			"message" => "subtask added successfully",
+			"message" => "task updated successfully",
 			"data" => $task
 		],200);
 	}
@@ -115,7 +115,7 @@ class TaskController extends Controller {
 		$task = $this->taskService->getById($formData["task_id"]);
 
 		return response()->json([
-			"message" => "subtask added successfully",
+			"message" => "assign added successfully",
 			"data" => $task
 		],200);
 	}
@@ -137,7 +137,7 @@ class TaskController extends Controller {
 		$task = $this->taskService->getById($taskId);
 
 		return response()->json([
-			"message" => "subtask added successfully",
+			"message" => "assign deleted successfully",
 			"data" => $task
 		],200);
 	}
@@ -188,7 +188,7 @@ class TaskController extends Controller {
 		$task = $this->taskService->getById($task_id);
 
 		return response()->json([
-			"message" => "subtask added successfully",
+			"message" => "subtask deleted successfully",
 			"data" => $task
 		],200);
 	}

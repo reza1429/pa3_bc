@@ -3,6 +3,7 @@
 namespace App\ServiceRepositoryPattern\Services;
 
 use App\ServiceRepositoryPattern\Repositories\AuthRepository;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthService {
 	private AuthRepository $authRepository;
@@ -15,8 +16,14 @@ class AuthService {
 		return $this->authRepository->register($data);
 	}
     public function attempt($credentials){
-		// return $credentials;
-		$user = $this->authRepository->getAllPass();
-        return auth()->attempt($user);
+        return JWTAuth::attempt($credentials);
     }
+	public function logout()
+	{
+		auth()->logout();
+	}
+	public function user()
+	{
+		return JWTAuth::user();
+	}
 }
